@@ -34,9 +34,9 @@ if(isset($_POST["btnsubmit"])) {
 					array_push($invalid_email,$email);
 				}
 	        }
-	        $targetDirectory = "uploads/";
-			$targetFilePath = $targetDirectory.$file_name;
-			$uploaded = move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath);
+	       $path = $_FILES['file']['name'];
+	       $ext = pathinfo($path, PATHINFO_EXTENSION);
+	       $uploaded = move_uploaded_file($_FILES["file"]["tmp_name"], $targetDirectory.uniqid().$ext);
 	    }
 	}
 	else {
