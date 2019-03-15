@@ -1,0 +1,1 @@
+included one more class Contactview which merges 2 objects (ListData and FileContents) and return the merged object 
